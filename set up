@@ -1,0 +1,12 @@
+require_relative 'app/models/game'
+@subject = Game.new
+
+def take_multiple_turns(array_of_turns)
+  array_of_turns.each do |turn|
+    @subject.take_turn(turn[0], turn[1])
+  end
+end
+
+
+diagonal_complete = [[1, 1], [2, 1], [0, 0], [1, 2], [2, 2]]
+take_multiple_turns(diagonal_complete)
